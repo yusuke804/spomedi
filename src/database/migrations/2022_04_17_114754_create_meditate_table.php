@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('meditate', function (Blueprint $table) {
-            $table->bigIncrements('meditate_id')->comment('瞑想セッションID');
+            $table->increments('meditate_id')->comment('瞑想セッションID');
             $table->time('meditate_time')->comment('瞑想セッション時間');
             $table->unsignedInteger('user_id')->nullable()->comment('ユーザーID');
             $table->unsignedInteger('meditate_genre_id')->nullable()->comment('瞑想ジャンルID');

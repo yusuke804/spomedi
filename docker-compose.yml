@@ -65,3 +65,16 @@ services:
       - MYSQL_USER=${DB_USERNAME:-phper}
       - MYSQL_PASSWORD=${DB_PASSWORD:-secret}
       - MYSQL_ROOT_PASSWORD=${DB_PASSWORD:-secret}
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    depends_on:
+      - db
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOSTS=spomedi-db-1
+      - PMA_USER=phper
+      - PMA_PASSWORD=secret
+    ports:
+      - "8080:80"
+    volumes:
+      - ./docker/phpmyadmin/sessions:/sessions
