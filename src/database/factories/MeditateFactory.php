@@ -17,7 +17,9 @@ class MeditateFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'meditate_time' => '1:00:00',
+            'user_id' => 1,
+            'meditate_genre_id' => $this->faker->numberBetween(1,3)
         ];
     }
 }

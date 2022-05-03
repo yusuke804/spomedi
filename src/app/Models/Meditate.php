@@ -12,6 +12,9 @@ class Meditate extends Model
     protected $table = "meditate";
     protected $primaryKey = "meditate_id";
 
+    const UPDATED_AT = null;
+    const CREATED_AT = null;
+
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class, 'user_id');
