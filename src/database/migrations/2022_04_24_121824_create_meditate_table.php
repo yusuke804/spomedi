@@ -19,6 +19,7 @@ return new class extends Migration
             $table->unsignedInteger('user_id')->nullable()->comment('ユーザーID');
             $table->foreign('user_id')->references('user_id')->on('user');
             $table->unsignedInteger('meditate_genre_id')->nullable()->comment('瞑想ジャンルID');
+            $table->foreign('meditate_genre_id')->references('maditate_genre_id')->on('meditate_genre');
         });
     }
 
