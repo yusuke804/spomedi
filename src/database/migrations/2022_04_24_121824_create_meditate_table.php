@@ -16,9 +16,8 @@ return new class extends Migration
         Schema::create('meditate', function (Blueprint $table) {
             $table->increments('meditate_id')->comment('瞑想セッションID');
             $table->time('meditate_time')->comment('瞑想セッション時間');
-            $table->unsignedInteger('user_id')->nullable()->comment('ユーザーID');
+            $table->unsignedInteger('user_id')->comment('ユーザーID');
             $table->foreign('user_id')->references('user_id')->on('user');
-            $table->unsignedInteger('meditate_genre_id')->nullable()->comment('瞑想ジャンルID');
         });
     }
 

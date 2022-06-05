@@ -13,9 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('meditate_genre', function (Blueprint $table) {
-            $table->increments('meditate_genre_id')->comment('瞑想ジャンルID');
-            $table->string('meditate_genre_name')->comment('瞑想ジャンル名');
+        Schema::create('meditate_medal', function (Blueprint $table) {
+            $table->increments('meditate_medal_id')->comment('瞑想メダルID');
+            $table->string('meditate_medal_name')->comment('瞑想メダル名');
         });
     }
 
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('meditate_genre');
+        Schema::dropIfExists('meditate_medal');
     }
 };
